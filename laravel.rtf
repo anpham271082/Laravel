@@ -1,0 +1,146 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2821
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 .SFNSMono-Light_YAXS140B3BC_wght1F40000;\f1\fnil\fcharset0 .AppleSystemUIFontMonospaced-Regular;\f2\froman\fcharset0 Times-Roman;
+\f3\fnil\fcharset0 Menlo-Regular;\f4\fmodern\fcharset0 Courier;}
+{\colortbl;\red255\green255\blue255;\red178\green186\blue203;\red28\green31\blue42;\red255\green255\blue255;
+\red0\green0\blue0;\red70\green137\blue204;\red24\green24\blue24;\red193\green193\blue193;\red194\green126\blue101;
+\red23\green23\blue23;\red202\green202\blue202;\red212\green214\blue154;\red155\green162\blue177;\red30\green33\blue39;
+\red244\green0\blue95;\red67\green192\blue160;}
+{\*\expandedcolortbl;;\cssrgb\c74902\c78039\c83529;\cssrgb\c14510\c16471\c21569;\cssrgb\c100000\c100000\c100000;
+\csgray\c0;\cssrgb\c33725\c61176\c83922;\cssrgb\c12157\c12157\c12157;\cssrgb\c80000\c80000\c80000;\cssrgb\c80784\c56863\c47059;
+\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;\cssrgb\c86275\c86275\c66667;\cssrgb\c67059\c69804\c74902;\cssrgb\c15686\c17255\c20392;
+\cssrgb\c97647\c14902\c44706;\cssrgb\c30588\c78824\c69020;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww10800\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs25\fsmilli12800 \cf2 \cb3 \expnd0\expndtw0\kerning0
+/usr/local/etc/php\
+\
+Check version\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs21 \cf0 \cb4 php artisan --version\
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs25\fsmilli12800 \cf2 \cb3 \
+composer create-project laravel/laravel example-app\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \cb1 php artisan cache:clear\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+php artisan serve // start laravel \
+\
+\
+Config database\
+\
+Config .env file\
+\
+\pard\pardeftab720\partightenfactor0
+
+\fs28 \cf6 \cb7 \expnd0\expndtw0\kerning0
+\CocoaLigature1 DB_CONNECTION\cf8 =mysql\cb1 \
+\cf6 \cb7 DB_HOST\cf8 =127.0.0.1\cb1 \
+\cf6 \cb7 DB_PORT\cf8 =3306\cb1 \
+\cf6 \cb7 DB_DATABASE\cf8 =laravel_database\cb1 \
+\cf6 \cb7 DB_USERNAME\cf8 =root\cb1 \
+\cf6 \cb7 DB_PASSWORD\cf8 =\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\
+php artisan cache:clear \
+php artisan session:table\
+php artisan migrate  \
+\
+\
+\
+php artisan make:model UserGroup\
+\
+\
+php artisan migrate // create table \
+\
+php artisan tinker // create pass for user\
+echo bcrypt(\'91pass123\'92)\
+\
+php artisan make:controller Admin/Users/LoginController -m\
+\'93-m create model\'94\
+\
+php artisan make:model --migration --controller Menu //create model database table menu and menu controller\
+\
+\
+php artisan make:request Menu/CreateFormRequest\
+https://adminlte.io/\
+\
+\
+Add Helpers/
+\f2\fs24 \cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 Functions.php autoload in 
+\f3\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 composer.json
+\f2\fs24 \cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 \
+
+\f3\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\fs24 \cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 "files": [\
+"app/Helpers/Functions.php"\
+]\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 composer dump-autoload\
+\
+\
+Ajax photo\
+\
+Remove \'93
+\fs28 \cf9 \cb10 \expnd0\expndtw0\kerning0
+\CocoaLigature1 'links'\cf11  => [\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf11 \cb10         \cf12 public_path\cf11 (\cf9 'storage'\cf11 ) => \cf12 storage_path\cf11 (\cf9 'app/public'\cf11 ),\cb1 \
+\cb10     ],\cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \'93 In filesystems.php\
+\
+And then run command line link storage\
+\
+php artisan storage:link\
+\
+\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 \expnd0\expndtw0\kerning0
+\CocoaLigature1 php artisan config:clear\
+\
+php artisan cache:clear\
+\
+php artisan config:cache\
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+
+\f3\fs22 \cf5 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs28 \cf13 \cb14 \expnd0\expndtw0\kerning0
+\CocoaLigature1 composer \cf15 \cb1 require\cf13 \cb14  intervention/image-laravel\
+
+\f3\fs22 \cf5 \cb1 \kerning1\expnd0\expndtw0 \CocoaLigature0 \
+\pard\pardeftab720\partightenfactor0
+
+\f4\fs28 \cf13 \cb14 \expnd0\expndtw0\kerning0
+\CocoaLigature1 composer remove intervention/image-laravel\
+composer clear
+\f2\fs24 \cf0 \cb1 \
+\pard\tx560\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\pardeftab720\pardirnatural\partightenfactor0
+\cf0 \
+App/Providers/AppServiceProvider\
+\pard\pardeftab720\partightenfactor0
+
+\f3\fs30 \cf16 \cb10 Paginator\cf11 ::\cf12 useBootstrap\cf11 ();\cb1 \
+\pard\pardeftab720\sa240\partightenfactor0
+
+\f2\fs24 \cf0 \
+}
